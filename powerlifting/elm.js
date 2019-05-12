@@ -4439,7 +4439,7 @@ var elm$core$Set$toList = function (_n0) {
 	return elm$core$Dict$keys(dict);
 };
 var author$project$Column$initColumns = _List_fromArray(
-	[9, 10, 1, 0, 3, 2, 4, 5, 6, 7, 8]);
+	[9, 10, 1, 0, 3, 2, 4, 6, 7, 8, 5]);
 var author$project$Feat$GNC = 2;
 var author$project$Feat$LBM = 1;
 var author$project$Feat$Raw = 0;
@@ -6286,6 +6286,13 @@ var author$project$Main$unitSelect = A2(
 			A3(author$project$Dropdowns$Option, 0, 'kilos', 'KG'),
 			A3(author$project$Dropdowns$Option, 1, 'pounds', 'LBM')
 		]));
+var elm$html$Html$Attributes$pattern = elm$html$Html$Attributes$stringProperty('pattern');
+var rundis$elm_bootstrap$Bootstrap$Form$Input$Attrs = function (a) {
+	return {$: 9, a: a};
+};
+var rundis$elm_bootstrap$Bootstrap$Form$Input$attrs = function (attrs_) {
+	return rundis$elm_bootstrap$Bootstrap$Form$Input$Attrs(attrs_);
+};
 var rundis$elm_bootstrap$Bootstrap$Form$Input$Id = function (a) {
 	return {$: 1, a: a};
 };
@@ -6503,7 +6510,13 @@ var author$project$Main$viewFloatInput = F3(
 				[
 					rundis$elm_bootstrap$Bootstrap$Form$Input$id(id),
 					rundis$elm_bootstrap$Bootstrap$Form$Input$placeholder('0'),
-					rundis$elm_bootstrap$Bootstrap$Form$Input$onInput(toMsg)
+					rundis$elm_bootstrap$Bootstrap$Form$Input$onInput(toMsg),
+					rundis$elm_bootstrap$Bootstrap$Form$Input$attrs(
+					_List_fromArray(
+						[
+							elm$html$Html$Attributes$pattern('\\d+(\\.\\d+)?'),
+							A2(elm$html$Html$Attributes$attribute, 'inputmode', 'decimal')
+						]))
 				]));
 	});
 var elm$html$Html$h2 = _VirtualDom_node('h2');
@@ -7330,7 +7343,7 @@ var rundis$elm_bootstrap$Bootstrap$Form$Select$disabled = function (disabled_) {
 	return rundis$elm_bootstrap$Bootstrap$Form$Select$Disabled(disabled_);
 };
 var rundis$elm_bootstrap$Bootstrap$General$Internal$MD = 2;
-var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col2 = 2;
+var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col6 = 6;
 var rundis$elm_bootstrap$Bootstrap$Grid$Internal$ColWidth = function (a) {
 	return {$: 0, a: a};
 };
@@ -7339,9 +7352,24 @@ var rundis$elm_bootstrap$Bootstrap$Grid$Internal$width = F2(
 		return rundis$elm_bootstrap$Bootstrap$Grid$Internal$ColWidth(
 			A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$Width, size, count));
 	});
-var rundis$elm_bootstrap$Bootstrap$Grid$Col$md2 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 2, 2);
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$md6 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 2, 6);
+var rundis$elm_bootstrap$Bootstrap$General$Internal$SM = 1;
+var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col3 = 3;
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$sm3 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 1, 3);
+var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col5 = 5;
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$sm5 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 1, 5);
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$sm6 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 1, 6);
+var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col7 = 7;
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$sm7 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 1, 7);
+var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col9 = 9;
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$sm9 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 1, 9);
+var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col12 = 12;
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$xs12 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 0, 12);
 var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col4 = 4;
-var rundis$elm_bootstrap$Bootstrap$Grid$Col$md4 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 2, 4);
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$xs4 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 0, 4);
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$xs6 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 0, 6);
+var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col8 = 8;
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$xs8 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 0, 8);
 var author$project$Main$lifterForm = function (model) {
 	return A2(
 		rundis$elm_bootstrap$Bootstrap$Form$form,
@@ -7361,57 +7389,83 @@ var author$project$Main$lifterForm = function (model) {
 				_List_fromArray(
 					[
 						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$colLabel,
+						rundis$elm_bootstrap$Bootstrap$Form$col,
 						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
+							[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs12, rundis$elm_bootstrap$Bootstrap$Grid$Col$md6]),
 						_List_fromArray(
 							[
-								elm$html$Html$text('Gender')
+								A2(
+								rundis$elm_bootstrap$Bootstrap$Form$row,
+								_List_Nil,
+								_List_fromArray(
+									[
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$colLabel,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs4, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm3]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Gender')
+											])),
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$col,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs8, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm9]),
+										_List_fromArray(
+											[
+												A4(
+												author$project$Dropdowns$typedSelect,
+												_List_Nil,
+												_List_fromArray(
+													[
+														A3(author$project$Dropdowns$Option, 0, 'man', 'M'),
+														A3(author$project$Dropdowns$Option, 1, 'woman', 'F'),
+														A3(author$project$Dropdowns$Option, 2, 'lifter', 'GNC')
+													]),
+												model.dn,
+												author$project$Main$SetGender)
+											]))
+									]))
 							])),
 						A2(
 						rundis$elm_bootstrap$Bootstrap$Form$col,
 						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md4]),
+							[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs12, rundis$elm_bootstrap$Bootstrap$Grid$Col$md6]),
 						_List_fromArray(
 							[
-								A4(
-								author$project$Dropdowns$typedSelect,
+								A2(
+								rundis$elm_bootstrap$Bootstrap$Form$row,
 								_List_Nil,
 								_List_fromArray(
 									[
-										A3(author$project$Dropdowns$Option, 0, 'man', 'M'),
-										A3(author$project$Dropdowns$Option, 1, 'woman', 'F'),
-										A3(author$project$Dropdowns$Option, 2, 'lifter', 'GNC')
-									]),
-								model.dn,
-								author$project$Main$SetGender)
-							])),
-						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$colLabel,
-						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
-						_List_fromArray(
-							[
-								elm$html$Html$text('Event')
-							])),
-						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$col,
-						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md4]),
-						_List_fromArray(
-							[
-								A4(
-								author$project$Dropdowns$typedSelect,
-								_List_Nil,
-								_List_fromArray(
-									[
-										A3(author$project$Dropdowns$Option, 3, 'totalled', 'T'),
-										A3(author$project$Dropdowns$Option, 0, 'squatted', 'S'),
-										A3(author$project$Dropdowns$Option, 1, 'benched', 'B'),
-										A3(author$project$Dropdowns$Option, 2, 'deadlifted', 'D')
-									]),
-								model.du,
-								author$project$Main$SetLift)
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$colLabel,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs4, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm3]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Event')
+											])),
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$col,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs8, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm9]),
+										_List_fromArray(
+											[
+												A4(
+												author$project$Dropdowns$typedSelect,
+												_List_Nil,
+												_List_fromArray(
+													[
+														A3(author$project$Dropdowns$Option, 3, 'totalled', 'T'),
+														A3(author$project$Dropdowns$Option, 0, 'squatted', 'S'),
+														A3(author$project$Dropdowns$Option, 1, 'benched', 'B'),
+														A3(author$project$Dropdowns$Option, 2, 'deadlifted', 'D')
+													]),
+												model.du,
+												author$project$Main$SetLift)
+											]))
+									]))
 							]))
 					])),
 				A2(
@@ -7420,52 +7474,104 @@ var author$project$Main$lifterForm = function (model) {
 				_List_fromArray(
 					[
 						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$colLabel,
+						rundis$elm_bootstrap$Bootstrap$Form$col,
 						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
+							[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs12, rundis$elm_bootstrap$Bootstrap$Grid$Col$md6]),
 						_List_fromArray(
 							[
-								elm$html$Html$text('Lifted weight')
+								A2(
+								rundis$elm_bootstrap$Bootstrap$Form$row,
+								_List_Nil,
+								_List_fromArray(
+									[
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$colLabel,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs4, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm3]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Lifted weight')
+											])),
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$col,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs8, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm9]),
+										_List_fromArray(
+											[
+												A2(
+												rundis$elm_bootstrap$Bootstrap$Form$row,
+												_List_Nil,
+												_List_fromArray(
+													[
+														A2(
+														rundis$elm_bootstrap$Bootstrap$Form$col,
+														_List_fromArray(
+															[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs6, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm6]),
+														_List_fromArray(
+															[
+																A3(author$project$Main$viewFloatInput, 'liftedInput', model.aq.G, author$project$Main$SetLiftedMass)
+															])),
+														A2(
+														rundis$elm_bootstrap$Bootstrap$Form$col,
+														_List_fromArray(
+															[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs6, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm6]),
+														_List_fromArray(
+															[
+																A2(author$project$Main$unitSelect, model._, author$project$Main$SetLiftedUnit)
+															]))
+													]))
+											]))
+									]))
 							])),
 						A2(
 						rundis$elm_bootstrap$Bootstrap$Form$col,
 						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
+							[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs12, rundis$elm_bootstrap$Bootstrap$Grid$Col$md6]),
 						_List_fromArray(
 							[
-								A3(author$project$Main$viewFloatInput, 'liftedInput', model.aq.G, author$project$Main$SetLiftedMass)
-							])),
-						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$col,
-						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
-						_List_fromArray(
-							[
-								A2(author$project$Main$unitSelect, model._, author$project$Main$SetLiftedUnit)
-							])),
-						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$colLabel,
-						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
-						_List_fromArray(
-							[
-								elm$html$Html$text('Bodyweight')
-							])),
-						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$col,
-						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
-						_List_fromArray(
-							[
-								A3(author$project$Main$viewFloatInput, 'bodyInput', model.Q.G, author$project$Main$SetBodyMass)
-							])),
-						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$col,
-						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
-						_List_fromArray(
-							[
-								A2(author$project$Main$unitSelect, model.R, author$project$Main$SetBodyUnit)
+								A2(
+								rundis$elm_bootstrap$Bootstrap$Form$row,
+								_List_Nil,
+								_List_fromArray(
+									[
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$colLabel,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs4, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm3]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Bodyweight')
+											])),
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$col,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs8, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm9]),
+										_List_fromArray(
+											[
+												A2(
+												rundis$elm_bootstrap$Bootstrap$Form$row,
+												_List_Nil,
+												_List_fromArray(
+													[
+														A2(
+														rundis$elm_bootstrap$Bootstrap$Form$col,
+														_List_fromArray(
+															[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs6, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm6]),
+														_List_fromArray(
+															[
+																A3(author$project$Main$viewFloatInput, 'bodyInput', model.Q.G, author$project$Main$SetBodyMass)
+															])),
+														A2(
+														rundis$elm_bootstrap$Bootstrap$Form$col,
+														_List_fromArray(
+															[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs6, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm6]),
+														_List_fromArray(
+															[
+																A2(author$project$Main$unitSelect, model.R, author$project$Main$SetBodyUnit)
+															]))
+													]))
+											]))
+									]))
 							]))
 					])),
 				A2(
@@ -7474,58 +7580,97 @@ var author$project$Main$lifterForm = function (model) {
 				_List_fromArray(
 					[
 						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$colLabel,
-						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
-						_List_fromArray(
-							[
-								elm$html$Html$text('Equipment')
-							])),
-						A2(
 						rundis$elm_bootstrap$Bootstrap$Form$col,
 						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md4]),
+							[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs12, rundis$elm_bootstrap$Bootstrap$Grid$Col$md6]),
 						_List_fromArray(
 							[
-								A4(
-								author$project$Dropdowns$typedSelect,
+								A2(
+								rundis$elm_bootstrap$Bootstrap$Form$row,
+								_List_Nil,
 								_List_fromArray(
 									[
-										rundis$elm_bootstrap$Bootstrap$Form$Select$disabled(true)
-									]),
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$colLabel,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs4, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm3]),
+										_List_fromArray(
+											[
+												elm$html$Html$text('Equipment')
+											])),
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$col,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs8, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm9]),
+										_List_fromArray(
+											[
+												A4(
+												author$project$Dropdowns$typedSelect,
+												_List_fromArray(
+													[
+														rundis$elm_bootstrap$Bootstrap$Form$Select$disabled(true)
+													]),
+												_List_fromArray(
+													[
+														A3(author$project$Dropdowns$Option, 0, 'raw', 'R'),
+														A3(author$project$Dropdowns$Option, 1, 'single ply', 'SP')
+													]),
+												model.a1,
+												author$project$Main$SetEquipment)
+											]))
+									]))
+							])),
+						A2(
+						rundis$elm_bootstrap$Bootstrap$Form$col,
+						_List_fromArray(
+							[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs12, rundis$elm_bootstrap$Bootstrap$Grid$Col$md6]),
+						_List_fromArray(
+							[
+								A2(
+								rundis$elm_bootstrap$Bootstrap$Form$row,
+								_List_Nil,
 								_List_fromArray(
 									[
-										A3(author$project$Dropdowns$Option, 0, 'raw', 'R'),
-										A3(author$project$Dropdowns$Option, 1, 'single ply', 'SP')
-									]),
-								model.a1,
-								author$project$Main$SetEquipment)
-							])),
-						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$colLabel,
-						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
-						_List_fromArray(
-							[
-								elm$html$Html$text('Age')
-							])),
-						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$col,
-						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
-						_List_fromArray(
-							[
-								A3(author$project$Main$viewFloatInput, 'ageInput', model.Q.G, author$project$Main$SetAge)
-							])),
-						A2(
-						rundis$elm_bootstrap$Bootstrap$Form$col,
-						_List_fromArray(
-							[rundis$elm_bootstrap$Bootstrap$Grid$Col$md2]),
-						_List_fromArray(
-							[
-								author$project$Main$saveButton(
-								author$project$Main$canMakeFeat(
-									author$project$Main$modelToFeat(model)))
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$col,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs12, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm7]),
+										_List_fromArray(
+											[
+												A2(
+												rundis$elm_bootstrap$Bootstrap$Form$row,
+												_List_Nil,
+												_List_fromArray(
+													[
+														A2(
+														rundis$elm_bootstrap$Bootstrap$Form$colLabel,
+														_List_fromArray(
+															[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs4, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm5]),
+														_List_fromArray(
+															[
+																elm$html$Html$text('Age')
+															])),
+														A2(
+														rundis$elm_bootstrap$Bootstrap$Form$col,
+														_List_fromArray(
+															[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs8, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm7]),
+														_List_fromArray(
+															[
+																A3(author$project$Main$viewFloatInput, 'ageInput', model.Q.G, author$project$Main$SetAge)
+															]))
+													]))
+											])),
+										A2(
+										rundis$elm_bootstrap$Bootstrap$Form$col,
+										_List_fromArray(
+											[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs12, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm5]),
+										_List_fromArray(
+											[
+												author$project$Main$saveButton(
+												author$project$Main$canMakeFeat(
+													author$project$Main$modelToFeat(model)))
+											]))
+									]))
 							]))
 					]))
 			]));
@@ -8965,8 +9110,9 @@ var rundis$elm_bootstrap$Bootstrap$Grid$row = F2(
 			rundis$elm_bootstrap$Bootstrap$Grid$Internal$rowAttributes(options),
 			A2(elm$core$List$map, rundis$elm_bootstrap$Bootstrap$Grid$renderCol, cols));
 	});
-var rundis$elm_bootstrap$Bootstrap$General$Internal$SM = 1;
-var rundis$elm_bootstrap$Bootstrap$Grid$Internal$Col12 = 12;
+var rundis$elm_bootstrap$Bootstrap$General$Internal$LG = 3;
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$lg3 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 3, 3);
+var rundis$elm_bootstrap$Bootstrap$Grid$Col$md3 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 2, 3);
 var rundis$elm_bootstrap$Bootstrap$Grid$Col$sm12 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 1, 12);
 var rundis$elm_bootstrap$Bootstrap$Grid$Col$sm4 = A2(rundis$elm_bootstrap$Bootstrap$Grid$Internal$width, 1, 4);
 var author$project$Main$view = function (model) {
@@ -9029,7 +9175,7 @@ var author$project$Main$view = function (model) {
 											elm$core$List$singleton,
 											rundis$elm_bootstrap$Bootstrap$Form$col(
 												_List_fromArray(
-													[rundis$elm_bootstrap$Bootstrap$Grid$Col$sm4, rundis$elm_bootstrap$Bootstrap$Grid$Col$md4])))),
+													[rundis$elm_bootstrap$Bootstrap$Grid$Col$xs6, rundis$elm_bootstrap$Bootstrap$Grid$Col$sm4, rundis$elm_bootstrap$Bootstrap$Grid$Col$md3, rundis$elm_bootstrap$Bootstrap$Grid$Col$lg3])))),
 									author$project$Column$initColumns))
 							]))
 					])),
